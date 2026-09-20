@@ -6,10 +6,10 @@ class DivideByZeroException extends Exception{
 }
 
 public class Calculator{
-    Scanner sc = new Scanner(System.in); 
-    boolean success = false;
-
-    public void calculate() throws DivideByZeroException{
+    public static void main(String[] args){
+        try{
+            Scanner sc = new Scanner(System.in); 
+            boolean success = false;
             while(!success){
                 System.out.println("Enter 1st number: ");
                 int a = sc.nextInt();
@@ -45,11 +45,6 @@ public class Calculator{
                 System.out.println("Result = " + result); 
                 success = true;
             }
-    }
-    public static void main(String[] args){
-        Calculator c = new Calculator();
-        try{
-            c.calculate();
         }
         catch(DivideByZeroException e){
             System.out.println("Error: " + e.getMessage());
